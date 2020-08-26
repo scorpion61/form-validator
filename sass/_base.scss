@@ -1,0 +1,38 @@
+// Color variables
+$color-red: hsl(0, 100%, 74%);
+$color-green: hsl(154, 59%, 51%);
+
+$color-blue: hsl(248, 32%, 49%);
+$color-blue-dark: hsl(249, 10%, 26%);
+$color-blue-grayish: hsl(246, 25%, 77%);
+
+*,
+*::before,
+*::after {
+	margin: 0;
+	padding: 0;
+	box-sizing: inherit;
+}
+
+html {
+	box-sizing: border-box;
+	font-size: 62.5%; // 10px/16px = 62.5%  -> 1rem = 10px;
+}
+
+body {
+	font-family: 'Poppins', sans-serif;
+	font-size: 1.6rem;
+	background-image: url(../images/bg-intro-desktop.png);
+	background-color: $color-red;
+	color: #fff;
+}
+.container {
+	height: 100vh;
+	display: grid;
+	grid-template-columns: minmax(min-content, 50rem) minmax(min-content, 45rem);
+	grid-column-gap: 5vw;
+	align-content: center;
+	justify-content: center;
+	align-items: center;
+	padding: 0 3vh;
+}

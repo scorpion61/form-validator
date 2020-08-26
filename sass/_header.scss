@@ -1,0 +1,12 @@
+.header {
+	max-width: 55ch;
+
+	&__heading {
+		font-size: 4rem;
+		line-height: 1.2;
+	}
+
+	&__text {
+		margin-top: 3rem;
+	}
+}
