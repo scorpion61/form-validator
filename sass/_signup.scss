@@ -15,18 +15,31 @@
 	padding: 3rem;
 	color: red;
 	text-align: right;
+	@include box-shadow;
+
+	@media only screen and (max-width: $medium) {
+		padding: 1.5rem;
+	}
+
+	&__heading {
+		@include box-shadow;
+	}
+
+	&__heading span {
+		color: $color-blue-grayish;
+		font-weight: 300;
+	}
 
 	&__error {
-		// display: none;
 		font-size: 1.1rem;
 		font-weight: 300;
+		margin-top: .3rem;
 	}
 
 	&__input-box {
 		margin-bottom: 1.5rem;
 
 		&__img {
-			// display: none;
 			position: absolute;
 			width: 2rem;
 			right: 1.5rem;
@@ -37,9 +50,8 @@
 		input {
 			font-size: 1.4rem;
 			color: $color-blue-dark;
-			padding: 1rem 1.5rem;
+			padding: 1.5rem;
 			width: 100%;
-			height: 4.5rem;
 			border: rgb(225, 225, 225) solid 1px;
 			border-radius: .5rem;
 
@@ -47,16 +59,11 @@
 				outline: none;
 				border: $color-blue solid 1px;
 			}
+			&::placeholder {
+				font-weight: 600;
+				color: rgb(180, 180, 180);
+			}
 		}
-	}
-
-	&__heading {
-		box-shadow: 0 .8rem .2rem rgba(0, 0, 0, .2);
-	}
-
-	&__heading span {
-		color: $color-blue-grayish;
-		font-weight: 300;
 	}
 
 	&__heading,
@@ -83,6 +90,9 @@
 		&:hover {
 			background-color: lighten($color-green, 15%);
 		}
+		&:focus {
+			outline: 0;
+		}
 	}
 
 	.terms {
@@ -95,4 +105,8 @@
 			color: $color-red;
 		}
 	}
+}
+
+.hide {
+	visibility: hidden;
 }

@@ -6,6 +6,15 @@ $color-blue: hsl(248, 32%, 49%);
 $color-blue-dark: hsl(249, 10%, 26%);
 $color-blue-grayish: hsl(246, 25%, 77%);
 
+//Box shadow
+@mixin box-shadow {
+	box-shadow: 0 .8rem .2rem rgba(0, 0, 0, .2);
+}
+
+//Media queries
+$medium: 56.25em;
+$small: 34.375em;
+
 *,
 *::before,
 *::after {
@@ -31,8 +40,36 @@ body {
 	display: grid;
 	grid-template-columns: minmax(min-content, 50rem) minmax(min-content, 45rem);
 	grid-column-gap: 5vw;
+	grid-row-gap: 7vw;
 	align-content: center;
 	justify-content: center;
 	align-items: center;
 	padding: 0 3vh;
+
+	@media only screen and (max-width: $medium) {
+		height: auto;
+		padding: 3vw;
+		text-align: center;
+		grid-template-columns: minmax(min-content, 55rem);
+		grid-template-rows: repeat(2, max-content);
+		grid-row-gap: 8.5vw;
+		align-content: center;
+	}
+}
+
+.footer {
+	font-size: 1.3rem;
+	text-align: center;
+	margin: 1.8rem 0 1.5rem;
+	font-weight: 300;
+
+	a {
+		text-decoration: none;
+		font-weight: 600;
+		color: inherit;
+	}
+
+	@media only screen and (max-width: $small) {
+		font-size: 1.1rem;
+	}
 }

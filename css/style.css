@@ -24,10 +24,39 @@ body {
   display: grid;
   grid-template-columns: minmax(min-content, 50rem) minmax(min-content, 45rem);
   grid-column-gap: 5vw;
+  grid-row-gap: 7vw;
   align-content: center;
   justify-content: center;
   align-items: center;
   padding: 0 3vh;
+}
+@media only screen and (max-width: 56.25em) {
+  .container {
+    height: auto;
+    padding: 3vw;
+    text-align: center;
+    grid-template-columns: minmax(min-content, 55rem);
+    grid-template-rows: repeat(2, max-content);
+    grid-row-gap: 8.5vw;
+    align-content: center;
+  }
+}
+
+.footer {
+  font-size: 1.3rem;
+  text-align: center;
+  margin: 1.8rem 0 1.5rem;
+  font-weight: 300;
+}
+.footer a {
+  text-decoration: none;
+  font-weight: 600;
+  color: inherit;
+}
+@media only screen and (max-width: 34.375em) {
+  .footer {
+    font-size: 1.1rem;
+  }
 }
 
 .header {
@@ -37,7 +66,13 @@ body {
   font-size: 4rem;
   line-height: 1.2;
 }
+@media only screen and (max-width: 34.375em) {
+  .header__heading {
+    font-size: 3rem;
+  }
+}
 .header__text {
+  font-weight: 300;
   margin-top: 3rem;
 }
 
@@ -58,10 +93,24 @@ body {
   padding: 3rem;
   color: red;
   text-align: right;
+  box-shadow: 0 0.8rem 0.2rem rgba(0, 0, 0, 0.2);
+}
+@media only screen and (max-width: 56.25em) {
+  .form {
+    padding: 1.5rem;
+  }
+}
+.form__heading {
+  box-shadow: 0 0.8rem 0.2rem rgba(0, 0, 0, 0.2);
+}
+.form__heading span {
+  color: #b9b6d3;
+  font-weight: 300;
 }
 .form__error {
   font-size: 1.1rem;
   font-weight: 300;
+  margin-top: 0.3rem;
 }
 .form__input-box {
   margin-bottom: 1.5rem;
@@ -76,9 +125,8 @@ body {
 .form__input-box input {
   font-size: 1.4rem;
   color: #3e3c49;
-  padding: 1rem 1.5rem;
+  padding: 1.5rem;
   width: 100%;
-  height: 4.5rem;
   border: #e1e1e1 solid 1px;
   border-radius: 0.5rem;
 }
@@ -86,12 +134,9 @@ body {
   outline: none;
   border: #6055a5 solid 1px;
 }
-.form__heading {
-  box-shadow: 0 0.8rem 0.2rem rgba(0, 0, 0, 0.2);
-}
-.form__heading span {
-  color: #b9b6d3;
-  font-weight: 300;
+.form__input-box input::placeholder {
+  font-weight: 600;
+  color: #b4b4b4;
 }
 .form__heading, .form__button {
   background-color: #6055a5;
@@ -115,6 +160,9 @@ body {
 .form__button:hover {
   background-color: #75dbaf;
 }
+.form__button:focus {
+  outline: 0;
+}
 .form .terms {
   text-align: center;
   font-size: 1rem;
@@ -123,6 +171,10 @@ body {
 .form .terms span {
   font-weight: 700;
   color: #ff7a7a;
+}
+
+.hide {
+  visibility: hidden;
 }
 
 /*# sourceMappingURL=style.css.map */
